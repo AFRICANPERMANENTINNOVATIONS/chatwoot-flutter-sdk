@@ -52,10 +52,8 @@ String generateScripts(
   return script;
 }
 
-const _androidOptions = AndroidOptions(
-  encryptedSharedPreferences: true,
-);
-final secureStorage = new FlutterSecureStorage(aOptions: _androidOptions);
+// v10+ migrates legacy EncryptedSharedPreferences data automatically.
+const secureStorage = FlutterSecureStorage();
 const cookieKey = 'cwCookie';
 
 class StoreHelper {
